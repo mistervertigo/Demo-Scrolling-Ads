@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,44 +19,48 @@
 	<!-- Latest compiled and minified JavaScript -->
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	 <script src="jscroll.js"></script>
+
 	
   </head>
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-  
-    </nav>
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
 
     <div class="container" id="result">
-     
+    
+	<div class="scroll" data-ui="jscroll-default">
+	<h3>Page 1 of jScroll Example - jQuery Infinite Scrolling Plugin</h3>
+	<p>This is the content of <strong>page 1</strong> in the jScroll example. Scroll to the bottom of this box to load the next set of content.</p>
+	<p>This is example text for the jScroll demonstration. jScroll is a jQuery plugin for infinite scrolling, endless scrolling, lazy loading, auto-paging, or whatever you may call it.</p>
+	<p>With jScroll, you can initialize the scroller on an element with a fixed height and overflow setting of &quot;auto&quot; or &quot;scroll,&quot; or it can be set on a standard block-level element within the document and the scrolling will be initialized based on the brower window&#39;s scroll position.</p>
+	
+	<h3>Page 2 of jScroll Example - jQuery Infinite Scrolling Plugin</h3>
+	<p>This is the content of <strong>page 1</strong> in the jScroll example. Scroll to the bottom of this box to load the next set of content.</p>
+	<p>This is example text for the jScroll demonstration. jScroll is a jQuery plugin for infinite scrolling, endless scrolling, lazy loading, auto-paging, or whatever you may call it.</p>
+	<p>With jScroll, you can initialize the scroller on an element with a fixed height and overflow setting of &quot;auto&quot; or &quot;scroll,&quot; or it can be set on a standard block-level element within the document and the scrolling will be initialized based on the brower window&#39;s scroll position.</p>
+	
+	
+	<h3>Page 3 of jScroll Example - jQuery Infinite Scrolling Plugin</h3>
+	<p>This is the content of <strong>page 1</strong> in the jScroll example. Scroll to the bottom of this box to load the next set of content.</p>
+	<p>This is example text for the jScroll demonstration. jScroll is a jQuery plugin for infinite scrolling, endless scrolling, lazy loading, auto-paging, or whatever you may call it.</p>
+	<p>With jScroll, you can initialize the scroller on an element with a fixed height and overflow setting of &quot;auto&quot; or &quot;scroll,&quot; or it can be set on a standard block-level element within the document and the scrolling will be initialized based on the brower window&#39;s scroll position.</p>
+	
+	
+	<h3>Page 4 of jScroll Example - jQuery Infinite Scrolling Plugin</h3>
+	<p>This is the content of <strong>page 1</strong> in the jScroll example. Scroll to the bottom of this box to load the next set of content.</p>
+	<p>This is example text for the jScroll demonstration. jScroll is a jQuery plugin for infinite scrolling, endless scrolling, lazy loading, auto-paging, or whatever you may call it.</p>
+	<p>With jScroll, you can initialize the scroller on an element with a fixed height and overflow setting of &quot;auto&quot; or &quot;scroll,&quot; or it can be set on a standard block-level element within the document and the scrolling will be initialized based on the brower window&#39;s scroll position.</p>
+	<a href="example-page2.html">next</a> </div>
+	
+	 
+ 	<script>
+ 	$('.scroll').jscroll();
+ 	</script>
+
+	 
       </div>
-
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
     </div> <!-- /container -->
 	 
 
@@ -63,14 +68,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	 <script src="jscroll.js"></script>
-	 
+
 	 <script>
-	 $('.row').jscroll({
-	     autoTriggerUntil: 3
-	 });
-	 $( "#result" ).load( "content.html" );
+
 	 </script>
 
   </body>
