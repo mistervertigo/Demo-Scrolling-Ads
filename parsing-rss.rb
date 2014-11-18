@@ -13,6 +13,8 @@ def createHTML (myRss, nextPage)
   puts "Errors exist" if (rss.errors.any?)
 
   myfile = "/Users/Leo/Sites/Demo-Scrolling-Ads/#{myRss}.html"
+        #myfile = "/home/ubuntu/www/Demo-Scrolling-Ads/#{myRss}.html"
+
 
   File.open("#{myfile}", "w") do |f2|
     header = rss.at_css('channel title').text
