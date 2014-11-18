@@ -19,9 +19,9 @@ def createHTML (myRss, nextPage)
     headerh1 = header.split("//")[0]
     headerSmall = header.split("//")[1]
     if myRss == 'portada'
-      f2.puts "<div class='page-header'><h1>#{headerh1}</h1></div>"
+      f2.puts "<div id='#{myRss}' class='page-header'><h1>#{headerh1}</h1></div>"
     else
-       f2.puts "<div class='page-header'><h2>#{headerh1}</h2></div>"
+       f2.puts "<div id='#{myRss}' class='page-header'><h2>#{headerh1}</h2></div>"
      end
     f2.puts "<ul class='flex-container'>"
     rss.search('item').map do |i|
