@@ -110,15 +110,15 @@ body{padding-top:50px;}
 			    <div class="container-fluid">
 			      <div class="row">
 			        <div class="col-sm-3 col-md-2 sidebar">
-			          <ul class="nav nav-sidebar">
-				    	    <li role="presentation"><a href="#portada">Deportes</a></li>
-				    	    <li role="presentation"><a href="#futbol" onclick="history.replaceState('foo', 'futbol', 'futbol.html');$( '#resultados' ).load( 'futbol.html' );">Fútbol</a></li>
-				    	    <li role="presentation"><a href="#baloncesto">Baloncesto</a></li>
-				    	    <li role="presentation"><a href="#ciclismo">Ciclismo</a></li>
-				    	    <li role="presentation"><a href="#golf">Golf</a></li>
-				    	    <li role="presentation"><a href="#tenis" onclick="history.replaceState('foo', 'tenis', 'tenis.html');$( '#resultados' ).load( 'tenis.html' );">Tenis</a></li>
-				    	    <li role="presentation"><a href="#motor">Motor</a></li>
-				    	    <li role="presentation"><a href="#masdeporte">Mas Deporte</a></li>
+			          <ul class="nav nav-sidebar inside">
+				    	    <li role="presentation" class="active portada"><a href="#portada">Deportes</a></li>
+				    	    <li role="presentation" class="futbol"><a href="#futbol">Fútbol</a></li>
+				    	    <li role="presentation" class="baloncesto"><a href="#baloncesto">Baloncesto</a></li>
+				    	    <li role="presentation" class="ciclismo"><a href="#ciclismo">Ciclismo</a></li>
+				    	    <li role="presentation" class="golf"><a href="#golf">Golf</a></li>
+				    	    <li role="presentation" class="tenis"><a href="#tenis">Tenis</a></li>
+				    	    <li role="presentation" class="motor"><a href="#motor">Motor</a></li>
+				    	    <li role="presentation" class="masdeporte"><a href="#masdeporte">Mas Deporte</a></li>
 			          </ul>
 			        </div>
 			        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -143,19 +143,31 @@ body{padding-top:50px;}
 	 <script src="jscroll.js"></script>
  	<script>
 	 
-	
 
+	 $('.inside li a').click(function(){  
+ 		 $(this).parent().addClass('active'); 
+		 $(this).parent().siblings().removeClass('active'); 
+	 });
+ 
+ 
 	  function inserth1Text(){
-		   
 			var pageInfo = $('.scroll a:last').attr('title');
-			var page = $('.scroll a:last').attr('href');
+			var page = $('.scroll a:last').attr('href').replace(".html","");
 			
-			console.log(page);
+			console.log($("."+page+"").html());
 			
-			//history.replaceState(pageInfo, pageInfo, page);
-			
-			$('.navbar-brand').text(pageInfo);
+   		$("."+page+"").addClass('active'); 
+  		 	$("."+page+"").siblings().removeClass('active'); 
 	  }
+	  
+	$('.inside li a').click(function() {
+		element = $(this).attr('href').replace('#', '');
+		
+		history.replaceState('foo', element, element+'.html');
+		$( '#resultados' ).load( element+'.html' );
+		
+		
+	});
 	 
 	 $('.scroll').jscroll({
     	 loadingHtml: '<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%"><span class="sr-only">Cargando</span></div></div>',
