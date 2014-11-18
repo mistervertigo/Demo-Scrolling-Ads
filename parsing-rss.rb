@@ -66,7 +66,7 @@ def createHTML (myRss, nextPage)
     
     f2.puts "<div class='ads'><img class='img-responsive' src='http://placehold.it/990x80'></div>"
     
-    f2.puts "<a href='#{nextPage}.html' title='#{headerh1}'>Siguiente</a> "
+    f2.puts "<a href='#{nextPage}.html' title='#{myRss}'>Siguiente</a> "
   
   end
 end

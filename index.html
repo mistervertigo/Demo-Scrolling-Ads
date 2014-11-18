@@ -144,29 +144,32 @@ body{padding-top:50px;}
  	<script>
 	 
 
-	 $('.inside li a').click(function(){  
- 		 $(this).parent().addClass('active'); 
-		 $(this).parent().siblings().removeClass('active'); 
-	 });
+	 
  
  
 	  function inserth1Text(){
-			var pageInfo = $('.scroll a:last').attr('title');
-			var page = $('.scroll a:last').attr('href').replace(".html","");
+			page = $('.scroll a:last').attr('title');
 			
-			console.log($("."+page+"").html());
+			console.log(page);
 			
    		$("."+page+"").addClass('active'); 
   		 	$("."+page+"").siblings().removeClass('active'); 
+			
+			history.replaceState('foo', page, page+'.html');
 	  }
 	  
+ 	 $('.inside li a').click(function(){  
+  		 $(this).parent().addClass('active'); 
+ 		 $(this).parent().siblings().removeClass('active'); 
+		
+ 	 });
+	 
 	$('.inside li a').click(function() {
 		element = $(this).attr('href').replace('#', '');
 		
 		history.replaceState('foo', element, element+'.html');
 		$( '#resultados' ).load( element+'.html' );
-		
-		
+
 	});
 	 
 	 $('.scroll').jscroll({
