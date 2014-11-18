@@ -18,7 +18,6 @@ def createHTML (myRss, nextPage)
     header = rss.at_css('channel title').text
     headerh1 = header.split("//")[0]
     headerSmall = header.split("//")[1]
-
     if myRss == 'portada'
       f2.puts "<div class='page-header'><h1>#{headerh1}</h1></div>"
     else
@@ -62,8 +61,10 @@ def createHTML (myRss, nextPage)
 
     end
     f2.puts "</ul>"
-   
-      f2.puts "<a href='#{nextPage}.html' title='#{headerh1}'>Siguiente</a> "
+    
+    f2.puts "<div class='ads'><img class='img-responsive' src='http://placehold.it/990x80'></div>"
+    
+    f2.puts "<a href='#{nextPage}.html' title='#{headerh1}'>Siguiente</a> "
   
   end
 end

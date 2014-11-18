@@ -53,6 +53,7 @@ body{padding-top:50px;}
 .progress{margin:30px;}
 .lead{font-size:15px}
 .low{font-size:13px}
+.ads{margin-top:20px;}
 
 @media all and (max-width: 600px) {
 	
@@ -87,7 +88,7 @@ body{padding-top:50px;}
 	  </nav>
  <div class="container-fluid">
       <!-- Example row of columns -->
-    
+    <div class='ads'><img class='img-responsive' src='http://placehold.it/990x80'></div>
 	<div class="scroll" id="resultados" data-ui="jscroll-default">
 		<a href='portada.html' title="Deportes">Siguiente</a> 
 	</div> 
@@ -110,17 +111,13 @@ body{padding-top:50px;}
 	
 
 	  function inserth1Text(){
-		  
-			
-			
-			
-			
-			var page = $('.scroll a:last').attr('href');
+		   
 			var pageInfo = $('.scroll a:last').attr('title');
+			var page = $('.scroll a:last').attr('href');
+			
 			console.log(page);
 			
-			var stateObj = { foo: "bar" };
-			history.pushState(stateObj, "page 2", page);
+			history.replaceState(pageInfo, pageInfo, page);
 			
 			$('.navbar-brand').text(pageInfo);
 	  }
