@@ -1,31 +1,5 @@
-
-	
-	
-/////////////// 
-
-
-
 	 function inserth1Text(){
 			page = $('.scroll a:last').attr('title');
-			
-			/*console.log(page);
-			$(".inside li").siblings().removeClass('active');
-   		$("."+page+"").addClass('active'); 
-  		 	//$("."+page+"").siblings().removeClass('active');
-			//$("."+page+"").prev().siblings().removeClass('active');
-			
-			console.log($(".inside li").siblings().text()); */
-			
-			/*var url = window.location.pathname;
-			var filename = url.substring(url.lastIndexOf('/')+1);
-			console.log(filename);
-			
-		
-							$('.nav li a[href^="/' + filename. + '"]').addClass('active');
-						   $('.nav li a').not($('.nav li a[href^="/' + filename. + '"]')).removeClass('active'); 
-							
-							
-							$('.masdeporte').removeClass('active');   */
 			
 			// Waypoints
 			$("#"+page+"").waypoint(
@@ -39,12 +13,13 @@
 					}
 					console.log(wayID);
 					$('li.'+wayID+'').siblings().removeClass('active');
+					$('li.'+wayID+'').parent().siblings().removeClass('active');
 					$('li.'+wayID+'').addClass('active');
 				}, { offset: '40%' });      
 	
 		   
 			
-			//history.replaceState('foo', page, page+'.html');
+			history.replaceState('foo', page, page+'.html');
 			
 	
 			
