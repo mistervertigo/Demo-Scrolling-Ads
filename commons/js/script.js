@@ -30,14 +30,16 @@
 			// Waypoints
 			$("#"+page+"").waypoint(
 				function(direction) {
+					console.log(direction);
 					if (direction ==='down') {
 						var wayID = $(this).attr('id');
 					} else {
-						var previous = $(this).prev();
-						var wayID = $(previous).attr('id');
+						
+						var wayID = $(this).attr('id');
 					}
-					$('.active').removeClass('active');
-					$('.nav li a[href=#'+wayID+']').prev().addClass('active');
+					console.log(wayID);
+					$('li.'+wayID+'').siblings().removeClass('active');
+					$('li.'+wayID+'').addClass('active');
 				}, { offset: '40%' });      
 	
 		   
