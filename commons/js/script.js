@@ -13,8 +13,7 @@
 					}
 					//console.log(wayID);
 					$('li.'+wayID+'').siblings().removeClass('active');
-					$('li.'+wayID+'').parent().siblings().removeClass('active');
-					$('li.'+wayID+'').parent().parent().siblings().removeClass('active');
+					
 					$('li.'+wayID+'').addClass('active');
 				}, { offset: '40%' });      
 	
