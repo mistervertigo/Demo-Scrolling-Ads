@@ -119,7 +119,7 @@ body{padding-top:50px;}
 			          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 			     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 			          <script src=".http://getbootstrap.com/assets/js/docs.min.js"></script>
-			          <script src="jscroll.js"></script>
+			          <script src="commons/js/jscroll.js"></script>
 			 <script>
          
 
@@ -134,7 +134,7 @@ body{padding-top:50px;}
 			                 $("."+page+"").addClass('active'); 
 			                         $("."+page+"").siblings().removeClass('active'); 
                         
-			                        // history.replaceState('foo', page, page+'.html');
+			                        history.replaceState('foo', page, page+'.html');
 			           }
           
 			          $('.inside li a').click(function(){  
@@ -146,7 +146,7 @@ body{padding-top:50px;}
 			         $('.inside li a').click(function() {
 			                 element = $(this).attr('href').replace('#', '');
                 
-			                 //history.replaceState('foo', element, element+'.html');
+			                 history.replaceState('foo', element, element+'.html');
 			                 $( '#resultados' ).load( element+'.html' );
 
 			         });

@@ -16,17 +16,36 @@
 			
 			console.log($(".inside li").siblings().text()); */
 			
-			var url = window.location.pathname;
+			/*var url = window.location.pathname;
 			var filename = url.substring(url.lastIndexOf('/')+1);
 			console.log(filename);
 			
 		
 							$('.nav li a[href^="/' + filename. + '"]').addClass('active');
-						   $('.nav li a').not($('.nav li a[href^="/' + filename. + '"]')).removeClass('active');         
+						   $('.nav li a').not($('.nav li a[href^="/' + filename. + '"]')).removeClass('active'); 
+							
+							
+							$('.masdeporte').removeClass('active');   */
+			
+			// Waypoints
+			$("#"+page+"").waypoint(
+				function(direction) {
+					if (direction ==='down') {
+						var wayID = $(this).attr('id');
+					} else {
+						var previous = $(this).prev();
+						var wayID = $(previous).attr('id');
+					}
+					$('.active').removeClass('active');
+					$('.nav li a[href=#'+wayID+']').prev().addClass('active');
+				}, { offset: '40%' });      
 	
 		   
 			
-			history.replaceState('foo', page, page+'.html');
+			//history.replaceState('foo', page, page+'.html');
+			
+	
+			
 	  }
 	  
  	 $('.inside li a').click(function(){  
