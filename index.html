@@ -120,6 +120,7 @@ body{padding-top:50px;}
 			     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 			          <script src=".http://getbootstrap.com/assets/js/docs.min.js"></script>
 			          <script src="commons/js/jscroll.js"></script>
+						 <script src="commons/js/waypoints.min.js"></script>
 			 <script>
          
 
@@ -129,10 +130,21 @@ body{padding-top:50px;}
 			           function inserth1Text(){
 			                         page = $('.scroll a:last').attr('title');
                         
-			                         console.log(page);
-                        
-			                 $("."+page+"").addClass('active'); 
-			                         $("."+page+"").siblings().removeClass('active'); 
+								 			// Waypoints
+								 			$("#"+page+"").waypoint(
+								 				function(direction) {
+								 					console.log(direction);
+								 					if (direction ==='down') {
+								 						var wayID = $(this).attr('id');
+								 					} else {
+						
+								 						var wayID = $(this).attr('id');
+								 					}
+								 					console.log(wayID);
+								 					$('li.'+wayID+'').siblings().removeClass('active');
+								 					$('li.'+wayID+'').parent().siblings().removeClass('active');
+								 					$('li.'+wayID+'').addClass('active');
+								 				}, { offset: '40%' });      
                         
 			                        history.replaceState('foo', page, page+'.html');
 			           }
