@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,64 +9,44 @@
 
     <title>Demo Scrolling</title>
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 
  <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
-	<!-- Latest compiled and minified JavaScript -->
+        <!-- Latest compiled and minified JavaScript -->
 
-	<script type="text/javascript">
-			(function(){
-				window.onpopstate = function(event) {
-					var message = ("onpopstate: location: " + document.location.href + ", data: " + JSON.stringify(event.state));
-					document.getElementById('log').innerHTML += message+"\n\n";
-				};
-				document.getElementById('bug').onclick = function(){
-					setTimeout(function(){
-						history.pushState({state:'new'},'New State','?new');
-					},1e3);
-					setTimeout(function(){
-						history.back();
-					},2e3);
-				};
-				document.getElementById('reset').onclick = function(){
-					document.location.href = document.location.href.replace(/[\#\?].*/,"");
-				};
-			})();
-		</script>
 
 <style>
-
 body{padding-top:50px;}
 
 .flex-container{
    padding: 0;
    margin: 0;
    list-style: none;
-  
+
    display: -webkit-box;
    display: -moz-box;
    display: -ms-flexbox;
    display: -webkit-flex;
    display: flex;
-  
+
    -webkit-flex-flow: row wrap;
    justify-content: space-around
 }
 
 .flex-item {
-	  padding: 5px;
-	  width: 45%;
-	  padding:0 30px;
-	  margin:10px 0;
-	  border-bottom:1px solid #f3f3f3;
-	 
+          padding: 5px;
+          width: 45%;
+          padding:0 30px;
+          margin:10px 0;
+          border-bottom:1px solid #f3f3f3;
+
 }
 .flex-item2{
-	width: 30%;
+        width: 30%;
 }
 .page-header{padding-top:50px;}
 
@@ -77,109 +56,110 @@ body{padding-top:50px;}
 .ads{margin-top:20px;}
 
 @media all and (max-width: 600px) {
-	
-	.flex-container{
-		-webkit-flex-flow: column wrap;
-	    flex-flow: column wrap;
-	    padding: 0;
-	 }
-	 .flex-item {
-	 	  padding: 5px;
-	 	  width: 100%;
-	 	  margin:10px 0;
-	 }
-	 
+
+        .flex-container{
+                -webkit-flex-flow: column wrap;
+            flex-flow: column wrap;
+            padding: 0;
+         }
+         .flex-item {
+                  padding: 5px;
+                  width: 100%;
+                  margin:10px 0;
+         }
+
 }
 
 </style>
-	
+        
   </head>
 
   <body>
-	 
-	  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	    <div class="container-fluid">
-	      <div class="navbar-header">
-	        <a class="navbar-brand" href="#">
-	          ELM
-	        </a>
-	      </div>
-	    </div>
-	  </nav>
+
+          <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                  ELM
+                </a>
+              </div>
+            </div>
+          </nav>
 			 
-
-			    <div class="container-fluid">
-			      <div class="row">
-			        <div class="col-sm-3 col-md-2 sidebar">
-			          <ul class="nav nav-sidebar inside">
-				    	    <li role="presentation" class="active portada"><a href="#portada">Deportes</a></li>
-				    	    <li role="presentation" class="futbol"><a href="#futbol">Fútbol</a></li>
-				    	    <li role="presentation" class="baloncesto"><a href="#baloncesto">Baloncesto</a></li>
-				    	    <li role="presentation" class="ciclismo"><a href="#ciclismo">Ciclismo</a></li>
-				    	    <li role="presentation" class="golf"><a href="#golf">Golf</a></li>
-				    	    <li role="presentation" class="tenis"><a href="#tenis">Tenis</a></li>
-				    	    <li role="presentation" class="motor"><a href="#motor">Motor</a></li>
-				    	    <li role="presentation" class="masdeporte"><a href="#masdeporte">Mas Deporte</a></li>
-			          </ul>
-			        </div>
-			        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-					    	<div class='ads'><img class='img-responsive' src='http://placehold.it/990x80'></div>
-							<div class="scroll" id="resultados" data-ui="jscroll-default">
-							<a href='portada.html' title="Deportes">Siguiente</a> 
-						</div>
-			        </div>
-			      </div>
-			    </div>
-		 
-		 
-		<!-- -->
+			 <div class="container-fluid">
+			                               <div class="row">
+			                                 <div class="col-sm-3 col-md-2 sidebar">
+			                                   <ul class="nav nav-sidebar inside">
+			                                             <li role="presentation" class="active portada"><a href="#portada">Deportes</a></li>
+			                                             <li role="presentation" class="futbol"><a href="#futbol">Fútbol</a></li>
+			                                             <li role="presentation" class="baloncesto"><a href="#baloncesto">Baloncesto</a></li>
+			                                             <li role="presentation" class="ciclismo"><a href="#ciclismo">Ciclismo</a></li>
+			                                             <li role="presentation" class="golf"><a href="#golf">Golf</a></li>
+			                                             <li role="presentation" class="tenis"><a href="#tenis">Tenis</a></li>
+			                                             <li role="presentation" class="motor"><a href="#motor">Motor</a></li>
+			                                             <li role="presentation" class="masdeporte"><a href="#masdeporte">Mas Deporte</a></li>
+			                                   </ul>
+			                                 </div>
+			                                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			                                                 <div class='ads'><img class='img-responsive' src='http://placehold.it/990x80'></div>
+			                                                         <div class="scroll" id="resultados" data-ui="jscroll-default">
+			                                                         <a href='portada.html' title="Deportes">Siguiente</a>
+			                                                 </div>
+			                                 </div>
+			                               </div>
+			                             </div>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	 <script src=".http://getbootstrap.com/assets/js/docs.min.js"></script>
-	 <script src="jscroll.js"></script>
- 	<script>
-	 
+			                 <!-- -->
 
-	 
+
+			     <!-- Bootstrap core JavaScript
+			     ================================================== -->
+			     <!-- Placed at the end of the document so the pages load faster -->
+			          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+			     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			          <script src=".http://getbootstrap.com/assets/js/docs.min.js"></script>
+			          <script src="jscroll.js"></script>
+			 <script>
+         
+
+         
  
  
-	  function inserth1Text(){
-			page = $('.scroll a:last').attr('title');
-			
-			console.log(page);
-			
-   		$("."+page+"").addClass('active'); 
-  		 	$("."+page+"").siblings().removeClass('active'); 
-			
-			history.replaceState('foo', page, page+'.html');
-	  }
-	  
- 	 $('.inside li a').click(function(){  
-  		 $(this).parent().addClass('active'); 
- 		 $(this).parent().siblings().removeClass('active'); 
-		
- 	 });
-	 
-	$('.inside li a').click(function() {
-		element = $(this).attr('href').replace('#', '');
-		
-		history.replaceState('foo', element, element+'.html');
-		$( '#resultados' ).load( element+'.html' );
+			           function inserth1Text(){
+			                         page = $('.scroll a:last').attr('title');
+                        
+			                         console.log(page);
+                        
+			                 $("."+page+"").addClass('active'); 
+			                         $("."+page+"").siblings().removeClass('active'); 
+                        
+			                        // history.replaceState('foo', page, page+'.html');
+			           }
+          
+			          $('.inside li a').click(function(){  
+			                  $(this).parent().addClass('active'); 
+			                  $(this).parent().siblings().removeClass('active'); 
+                
+			          });
+         
+			         $('.inside li a').click(function() {
+			                 element = $(this).attr('href').replace('#', '');
+                
+			                 //history.replaceState('foo', element, element+'.html');
+			                 $( '#resultados' ).load( element+'.html' );
 
-	});
-	 
-	 $('.scroll').jscroll({
-    	 loadingHtml: '<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%"><span class="sr-only">Cargando</span></div></div>',
-		 autoTrigger: true,
-		 padding: 100,
-		 callback: inserth1Text
-});
+			         });
+         
+			          $('.scroll').jscroll({
+			          loadingHtml: '<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%"><span class="sr-only">Cargando</span></div></div>',
+			                  autoTrigger: true,
+			                  padding: 100,
+			                  callback: inserth1Text
+			 });
 
- 	</script>
-  </body>
-</html>
+			         </script>
+			   </body>
+			 </html>
+			                                    
+			 
