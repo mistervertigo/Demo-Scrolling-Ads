@@ -1,6 +1,8 @@
+var allvar = 'foo'; 
+
 	 function inserth1Text(){
 			page = $('.scroll a:last').attr('title');
-			
+
 			// Waypoints
 			$("#"+page+"").waypoint(
 				function(direction) {
@@ -11,10 +13,16 @@
 						
 						var wayID = $(this).attr('id');
 					}
-					//console.log(wayID);
-					$('li.'+wayID+'').siblings().removeClass('active');
+					console.log("allvar: "+allvar);
+					$('li.'+allvar+'').removeClass('active');
+					
+					//$('li.active').removeClass('active');
 					
 					$('li.'+wayID+'').addClass('active');
+					console.log("wayID: "+wayID);
+					
+					allvar = wayID;
+
 				}, { offset: '40%' });      
 	
 		   
