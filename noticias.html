@@ -16,7 +16,10 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
  <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
  <link rel="stylesheet" href="commons/css/style.css" type="text/css">
-
+<style>
+section{height:500px;}
+	
+</style>
   </head>
 
   <body>
@@ -34,26 +37,27 @@
 			      <div class="row">
 			        
 			        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-					    	<div class='ads'><img class='img-responsive' src='http://placehold.it/990x80'></div>
+					    	<div class='ads'><img class='img-responsive' src='http://placehold.it/300x250'></div>
 							<div class="scroll" id="resultados" data-ui="jscroll-default">
-							<a href='noticias/1402478520.html' title="Deportes">Siguiente</a>
+							<a href='noticias/1402479996.html' title="Deportes">Siguiente</a>
 						</div>
 			        </div>
 			      </div>
 			    </div>
 				 
 	        <div class="col-sm-3 col-md-2 sidebar">
+				  <h5>Artículos relacionados</h5>
 	          <ul class="nav nav-sidebar inside" id="menu-center">
-		    	    <li role="presentation" class="portada" title="Portada">Artículos relacionados
-		    	    	<ul>
 							<li role="presentation" class="noticia_1402553524 active"><a href="#noticia_1402553524">1</a></li>
 		    	   		<li role="presentation" class="noticia_1402558867"><a href="#noticia_1402558867">2</a></li>
 		    	   		<li role="presentation" class="noticia_1402511821"><a href="#noticia_1402511821">3</a></li>
 		    	   		<li role="presentation" class="noticia_1402479996"><a href="#noticia_1402479996">4</a></li>
 		    	   		<li role="presentation" class="noticia_1402478520"><a href="#noticia_1402478520">5</a></li>
-						</ul>
-					</li>
 				 </ul>
+				 <h5>Todas las noticias de:</h5>
+				 <ul class="nav nav-sidebar inside" id="menu-center">
+				 	<li role="presentation" class="baloncesto" title="Baloncesto"><a href="#baloncesto">Baloncesto</a></li>
+				</ul>
 	        </div>
 
     <!-- Bootstrap core JavaScript
@@ -94,7 +98,7 @@
 	
 		   
 			
-	 			history.replaceState('foo', page, page+'.html');
+	 			//history.replaceState('foo', page, ''+page+'.html');
 			
 	
 			
