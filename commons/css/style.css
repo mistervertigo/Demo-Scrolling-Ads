@@ -71,6 +71,21 @@ section h1{
 section h2{
 	font-size:14px;
 }
-section .foto{
+.ads{
+	float:right;
+	margin:10px;
+	width:320px;
 	
+}
+.foto{
+	float:left;
+	margin:10px;
+	width:600px;
+}
+.tamano{
+	clear:both;
+}
+section span, section time{
+	clear:both;
+	width:100%;
 }

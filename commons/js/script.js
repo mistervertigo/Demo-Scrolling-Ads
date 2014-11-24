@@ -29,7 +29,7 @@ var allvar = 'foo';
 	
 		   
 			
-			history.replaceState('foo', page, page+'.html');
+			//history.replaceState('foo', page, page+'.html');
 			
 	
 			
