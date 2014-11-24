@@ -62,7 +62,7 @@ ul li ul li.active{
 section{
 	padding-top:50px;
 	margin-bottom:40px;
-	border-bottom:1px solid #d5d5d5;
+	
 }
 section h1{
 	font-size:36px;
@@ -71,21 +71,29 @@ section h1{
 section h2{
 	font-size:14px;
 }
-.ads{
-	float:right;
-	margin:10px;
-	width:320px;
-	
-}
-.foto{
-	float:left;
-	margin:10px;
-	width:600px;
-}
+
 .tamano{
 	clear:both;
+	font-size:14px;
 }
-section span, section time{
+section time{
 	clear:both;
-	width:100%;
+	display:block;
 }
+hr{display: block;
+clear: both;}
+.related{
+	padding-left:10px;
+	color:#666;
+}
+.origen{
+	font-size:18px;
+}
+
+#el_levante_hace_sangrar_al_sevilla{background:#fff;}
+#el_levante_hace_sangrar_al_sevilla h1{
+	font-size:44px;
+	
+}
+
+section.article{background:#ddd;padding:20px;}
