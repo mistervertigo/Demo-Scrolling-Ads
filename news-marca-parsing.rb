@@ -4,10 +4,6 @@
 require 'open-uri'
 require 'nokogiri'
 
-require 'rubygems'
-require 'json'
-require 'net/http'
-
 
 def createArticles (ficheros, urls, nxt, id)
   File.new("#{ficheros}", "w")
@@ -39,7 +35,7 @@ def createArticles (ficheros, urls, nxt, id)
     f2.puts "<div class='ads'><img class='img-responsive' src='http://placehold.it/300x250'></div>"
     f2.puts "#{text}"
     f2.puts "</section>"
-    f2.puts "<a href='noticias/#{nxt}.html' title='#{nxt}'>Siguiente</a>"
+    f2.puts "<a href='noticias/#{nxt}.html' title='#{id}'>Siguiente</a>"
     
   end
 end

@@ -2,28 +2,30 @@ var allvar = 'foo';
 
 	 function inserth1Text(){
 			page = $('.scroll a:last').attr('title');
-
+			console.log(page);
 			// Waypoints
-			$("#"+page+"").waypoint(
-				function(direction) {
-					console.log(direction);
-					if (direction ==='down') {
-						var wayID = $(this).attr('id');
-					} else {
-						
-						var wayID = $(this).attr('id');
-					}
-					console.log("allvar: "+allvar);
-					$('li.'+allvar+'').removeClass('active');
-					
-					//$('li.active').removeClass('active');
-					
-					$('li.'+wayID+'').addClass('active');
-					console.log("wayID: "+wayID);
-					
-					allvar = wayID;
+         $("section").waypoint(
+                 function(direction) {
+                         //console.log(direction);
+                         if (direction ==='down') {
+                                 var wayID = $(this).attr('id');
+										
+                         } else {
+										
+                         		  
+										  var previous = $(this).parent().prev().children();
+										  
+                                 var wayID = $(previous).attr('id');
+										  
+										 
+                         }
+								
+								console.log(wayID);
 
-				}, { offset: '40%' });      
+                        $('li.active').removeClass('active');
+                         $('li.'+wayID+'').addClass('active');
+
+                 }, { offset: '40%' });    
 	
 		   
 			
