@@ -31,7 +31,7 @@ def createArticles (ficheros, urls, nxt, id)
     f2.puts "<section id='#{id}' class='article'>"
     f2.puts "<h1>#{header}</h1>"
     f2.puts "#{resume}"
-    f2.puts "<div class='foto'><img src='#{photo}' alt='#{altphoto}' />"
+    f2.puts "<div class='foto'><img class='img-responsive' src='#{photo}' alt='#{altphoto}' />"
     f2.puts "#{sign}"
     f2.puts "#{fecha}</div>"
     f2.puts "#{text}"
