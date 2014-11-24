@@ -59,3 +59,18 @@ ul li ul li.active{
 	color:#fff;
 	
 }
+section{
+	padding-top:50px;
+	margin-bottom:40px;
+	border-bottom:1px solid #d5d5d5;
+}
+section h1{
+	font-size:36px;
+}
+
+section h2{
+	font-size:14px;
+}
+section .foto{
+	
+}
