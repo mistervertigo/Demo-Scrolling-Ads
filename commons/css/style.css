@@ -90,8 +90,8 @@ clear: both;}
 	font-size:18px;
 }
 
-#el_levante_hace_sangrar_al_sevilla{background:#fff;}
-#el_levante_hace_sangrar_al_sevilla h1{
+#el_levante_hace_sangrar_al_sevilla, #el_levante_hace_sangrar_al_sevilla_2{background:#fff;}
+#el_levante_hace_sangrar_al_sevilla h1, #el_levante_hace_sangrar_al_sevilla_2 h1{
 	font-size:44px;
 	
 }
