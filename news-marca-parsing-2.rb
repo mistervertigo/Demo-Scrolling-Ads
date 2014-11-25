@@ -1,4 +1,37 @@
+#!/bin/env ruby
+# encoding: utf-8
 
+#http://www.elmundo.es/comunidad-valenciana/2014/11/23/54722342ca4741967c8b4580.html
+
+require 'open-uri'
+require 'nokogiri'
+
+  
+
+
+def createArticles (ficheros, urls, nxt, id)
+  File.new("#{ficheros}", "w")
+  
+  puts "Generaring... #{ficheros}"
+  
+  html = open("#{urls}").read
+  article = Nokogiri::HTML(html)
+
+  File.open("#{ficheros}", "w:UTF-8") do |f2|
+    
+
+  
+    header = article.at_css(".desarrollo header h1").text()
+    resume = article.at_css(".desarrollo header .subtitulos")
+    photo = article.at_css("#fotoPrincipal")['src']
+    altphoto = article.at_css("div.foto img")['alt']
+    sign = article.at_css(".desarrollo div.firma span")
+    fecha = article.at_css(".desarrollo time")
+    
+    text = article.at_css(".desarrollo div#tamano")
+    
+    
+    f2.puts %{
       <!DOCTYPE html>
       <html lang="en">
         <head>
@@ -50,35 +83,25 @@
                                       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                                                 
                                                               <div class="scroll" id="resultados" data-ui="jscroll-default">
+    }
     
-<span id='mycontent'>
-<section id='el_levante_ya_gana_en_casa' class='article'>
-<h1>El Levante ya gana en casa</h1>
-<ul class="subtitulos">
-<li>
-<h2 itemprop="alternativeHeadline">
-En el estreno de Lucas Alcaraz en el Ciutat de Valencia, el Almería sufrió el primer gol y la primera victoria local de los azulgranas (2-1) </h2>
-</li>
-</ul>
-<div class='foto'><img class='img-responsive' src='//estaticos01.elmundo.es/assets/multimedia/imagenes/2014/11/02/14149598035781.jpg' alt='Los jugadores del Levante celebran un gol al Almería.' />
+ 
+    f2.puts "<span id='mycontent'>"
+    f2.puts "<section id='#{id}' class='article'>"
+    f2.puts "<h1>#{header}</h1>"
+    f2.puts "#{resume}"
+    f2.puts "<div class='foto'><img class='img-responsive' src='#{photo}' alt='#{altphoto}' />"
+    f2.puts "#{sign}"
+    f2.puts "#{fecha}</div>"
+    f2.puts "#{text}"
+    f2.puts "<div class='ads'><img class='img-responsive' src='http://placehold.it/900x80'></div>"
+    f2.puts "</section>"
 
-<time datetime="2014-11-02">
-Actualizado:
-<span class="fecha" itemprop="dateModified">02/11/2014</span> <span class="hora">21:23 horas</span>
-</time></div>
-<div id="tamano" class="tamano" itemprop="articleBody">
-<p>Cinco partidos y casi 400 minutos necesitó el Levante para marcar su primer gol como local de la temporada, un tanto que encarriló su primera victoria en el Ciutat de Valencia en esta Liga al derrotar por 2-1 al Almería. En el estreno de Lucas Alcaraz como entrenador levantinista en su estadio, llegó la primera alegría para los valencianos. <a href="http://www.elmundo.es/eventos/en-directo/2014/11/02/18807/">[Narración y estadísticas]</a></p>
-<p>Y es que el Levante recuperó la solidaridad y la sobriedad defensiva que le ha llevado en los últimos años a mantener con solvencia la categoría. Tras un comienzo de partido muy igualado y físico, el Almería fue creciendo y comenzó a asomarse al área de Mariño. La ocasión más clara llegó tras un potente disparo de Thomas que el meta levantinista rechazó en dos tiempos. Sobrepasado el ecuador del primer tiempo, una gran recuperación de Diop permitió a <strong>Barral </strong>enfilar con peligro hacia el área almeriense y, tras regatear a su defensor, soltó un potente zurdazo que puso fin a la sequía goleadora del Levante en su estadio.</p>
-<p>El propio delantero pudo ampliar su cuenta anotadora, apenas un minuto después, pero se entretuvo en exceso y dio tiempo a Ximo Navarro a arrebatarle el balón cuando de nuevo encaraba al meta Rubén. El conjunto valenciano mantuvo la concentración y supo manejar el partido para mantener su renta hasta el descanso. En el segundo tiempo y con el paso de los minutos, fue el Almería el que asumió el peso del partido, ante un Levante cada vez más reservón y timorato.</p>
-<p>Avisó Ximo Navarro con un lanzamiento de media distancia que obligó al meta Mariño a lucirse. Pero fue en una acción a balón parado con la que llegó el empate, en un saque de esquina que, tras peinar en el primer palo un compañero, cabeceó <strong>Zongo </strong>a placer en el segundo. La reacción del Levante fue inmediata. Todo el equipo dio un paso adelante y se lanzó en busca de la victoria.</p>
-<p>Tan solo cinco minutos tardó en retomar la iniciativa en el marcador, después de un magistral lanzamiento de falta de Gavilán que se estrelló en el larguero, pero el balón le cayó a <strong>Víctor Casadesús</strong>, que marcó sin oposición. El partido entró en una fase de intercambio de golpes, si bien fue el Levante el que más cerca estuvo del tercero, pero Barral y Morales desperdiciaron dos claras ocasiones para sentenciar el choque.</p>
-</div>
-<div class='ads'><img class='img-responsive' src='http://placehold.it/900x80'></div>
-</section>
-<hr>
-<a href='alcaraz_se_estrena_con_derrota_2.html' title='el_levante_ya_gana_en_casa_2'>Siguiente</a>
-</span>
-
+    f2.puts "<hr>"
+    f2.puts "<a href='#{nxt}_2.html' title='#{id}_2'>Siguiente</a>"
+    f2.puts "</span>"
+    
+     f2.puts %{
       
                                                 </div>
                                 </div>
@@ -103,4 +126,39 @@ Actualizado:
   </body>
 </html>
     
+    }
     
+  end
+end
+
+def readArticles (page)
+  
+  html = open("#{page}").read
+  article = Nokogiri::HTML(html)
+   #sample = Array.new 
+  article.search("section#relatedNews ul li").each do |x|
+    site_article = x.at_css("a")['href']
+    site_article_title = x.at_css("a[href]").text
+    dominio = "http://www.elmundo.es"
+    
+    myfile = "#{site_article}".split('/')[-1].split('=')[-1]
+    
+    allmyfiles = "/Users/Leo/Sites/Demo-Scrolling-Ads/#{myfile}_2.html"   
+    
+    #sample.push myfile
+    
+    nextpage = x.next_element.at_css("a")['href'].split('=')[-1]
+    
+  
+    createArticles(allmyfiles, site_article, nextpage, myfile)
+    
+
+    
+    
+  end
+end
+
+print "Listado de noticias: "
+url = gets.chomp
+
+readArticles ("#{url}")

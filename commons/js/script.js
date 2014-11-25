@@ -54,7 +54,8 @@ var allvar = 'foo';
     	 loadingHtml: '<div class="progress"><div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%"><span class="sr-only">Cargando</span></div></div>',
 		 autoTrigger: true,
 		 padding: 100,
-		 callback: inserth1Text
+		 callback: inserth1Text,
+		 contentSelector: '#mycontent'
 });
 
 
